@@ -1,6 +1,6 @@
 # Fundamento-da-Iac
 
-Preparação do Ambiente 
+Preparação do Ambiente Ubuntu/Linux 
 
 # Instalação do Terraform
 
@@ -12,13 +12,11 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://
 
 sudo apt update && sudo apt install terraform
 
-# Instalação 
-Paython3
+# Instalação python3
+
 apt install python3
 
 # Instalação do Ansible
-
-Ubuntu
 
 sudo apt update
 
