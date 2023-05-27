@@ -40,3 +40,16 @@ sudo ./aws/install
 sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
 
 Fonte: https://docs.aws.amazon.com/pt_br/cli/latest/userguide/getting-started-install.html
+
+# confguração de a acesso Terraform na AWS
+AWS CLI
+
+Caso você ainda não tenha instalado a AWS CLI, basta ir a página da AWS CLI e seguir os procedimentos para o seu sistema operacional.
+
+Depois de instalado você pode configurar a AWS usando o comando aws configure onde será requisitado a chave secreta (secret key) que pode ser criada nessa pagina clicando em “criar chave de acesso” na aba “credenciais do AWS IAM”.
+
+Link: https://console.aws.amazon.com/iam/home?#/security_credentials
+
+
+
+
