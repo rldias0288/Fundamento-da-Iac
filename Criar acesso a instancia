@@ -1,0 +1,22 @@
+## Criar acesso por chaves na instancia
+1- Clicar na instancia > Connect > SSH Client > create keypair
+Salvar arquivo chave.pem, dentro da pasta iac dentro do servidor
+Adicionar a linha no arquivo main.tf
+Linha:  
+key_name = "iac-alura"
+
+Depois executar 
+
+# terraform apply
+
+Acessar a instacia via ssh 
+
+# ssh -i "iac-alura.pem" ubuntu@ec2-54-213-223-137.us-west-2.compute.amazonaws.com
+
+Criação de uma pagina teste 
+nohup busybox httpd -f -p 8080 &
+
+Acessar o navegador com ip externo da instancia com a porta 8080
+http://54.213.223.137:8080/
+
+
