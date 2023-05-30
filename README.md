@@ -50,6 +50,8 @@ Depois de instalado você pode configurar a AWS usando o comando aws configure o
 
 Link: https://console.aws.amazon.com/iam/home?#/security_credentials
 
+Gerar chaves para se conectar no github
 
+Link: https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux
 
 
