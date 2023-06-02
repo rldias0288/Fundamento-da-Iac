@@ -1,0 +1,61 @@
+- Criar dois arquivos
+hosts.yml
+[terraform-ansible]
+# IP da instancia 
+34.219.164.37
+================================================================================
+playbook.yml
+- hosts: terraform-ansible
+  tasks:
+  - name: criando arquivo
+    copy:
+     dest: /home/ubuntu/index.html
+     content: <h1>Feito com terraform e ansible, Funcionou!!!</h1>
+  - name: criando o servidor
+    shell: "nohup busybox httpd -f -p 8080 &"
+
+- Executar o Ansible
+ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml
+===================================================================================
+#### Instalar pacotes com permissão de root
+- hosts: terraform-ansible
+  tasks:
+  - name: Instalando o python3, virtualenv
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      update_cache: yes
+    become: yes
+===================================================================================
+## Instalar Dependncias com ansible 
+- hosts: terraform-ansible
+  tasks:
+  - name: Instalando o python3, virtualenv
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      update_cache: yes
+    become: yes
+  - name: Instalando dependencias cpm pip (Django e Django Rest)
+    pip:
+      virtualenv: /home/ubuntu/vm/venv
+      name:
+        - django
+        - djangorestframework
+- Ativar a maquina virtual dentro da vm na aws
+-------------------------------------------------------------------------------------------------
+Acessar a maquina 
+$ssh -i "iac-alura.pem" ubuntu@ec2-54-190-63-242.us-west-2.compute.amazonaws.com
+Verificar se instalou o python3 e o virtuallenv
+python3 --version
+virtualenv --version
+
+Ativar a vm virtual 
+  Acessar a pasta 
+ $cd vm/venv/bin/ 
+ $. activate
+ Ex: $(venv) ubuntu@ip-172-31-30-53:~/vm/venv/bin$
+ Verificar dependências instalada 
+ $pip freeze 
