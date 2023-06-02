@@ -23,7 +23,7 @@ terraform {
                   cd /home/ubuntu
                   echo "<h1>Feito com Terraform - 2 </h1>" > index.html
                   nohup busybox httpd -f -p 8080 &
-                EOF    
+                EOF
   tags = {
     Name = "Primeira instancia"
   }
